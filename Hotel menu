@@ -3,6 +3,7 @@ public class Do_While {
 public static void main(String[] args) {
 	int menu,menu1 = 0;
 	char ans;
+	int price=0;
 	Scanner sc=new Scanner(System.in);
 	do {
 	System.out.println("1.Non veg");
@@ -11,11 +12,24 @@ public static void main(String[] args) {
 	menu=sc.nextInt();
 	switch(menu) {
 	case 1:
-		System.out.println("chicken lolipop");
+		System.out.println("chicken lolipop ");
 		System.out.println("chicken sup");
 		System.out.println("Chicken haka noodles");
 		System.out.println("please select your menu");
 		menu1=sc.nextInt();
+		switch(menu1) {
+		case 1:
+			price+=200;
+			break;
+		case 2:
+			price+=100;
+			break;
+		case 3:
+			price+=250;
+			break;
+			default:
+				System.out.println("select the order ");
+		}
 		break;
 	case 2:	
 		System.out.println("veg Rice plate");
@@ -23,42 +37,33 @@ public static void main(String[] args) {
 		System.out.println("veg biryani");
 		System.out.println("please select your menu");
 		menu1=sc.nextInt();
+		switch(menu1) {
+		case 1:
+			price+=100;
+			break;
+		case 2:
+			price+=150;
+			break;
+		case 3:
+			price+=200;
+			break;
+			default:
+				System.out.println("select the order ");
+		}
 		break;
-	default :
+ default :
 		System.out.println("Please select your order properly");
 	}
-	if(menu==1) {
-	 if(menu1==1) {
-		System.out.println("your bill is : 160 ");
+	
+	System.out.println("can u add another item y/n");
+	ans=sc.next().charAt(0);
+	if(ans=='y'||ans=='Y')
+		System.out.println();
+	else
 		break;
-    	}
-	 else if(menu1==2) {
-		 System.out.println("Your bill is : 200");
-		 break;
-	 }
-	 else if(menu1==3) {
-		 System.out.println("your bill is : 150");
-		 break;
-	 }
-	}
-	else if(menu==2) {
-		 if(menu1==1) {
-				System.out.println("your bill is : 80 ");
-				break;
-		    	}
-			 else if(menu1==2) {
-				 System.out.println("Your bill is : 180");
-				 break;
-			 }
-			 else if(menu1==3) {
-				 System.out.println("your bill is : 50");
-				 break;
-			 }
-	}
-	else {
-        System.out.println("Thank you for visit ");
-	}
 	}
 	while(menu>0);
+	System.out.println("thanks for comming ");
+	System.out.println("the total price is"+price);
 }
 }
