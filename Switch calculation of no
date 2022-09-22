@@ -11,7 +11,7 @@ public static void main(String[] args) {
 	int a=sc.nextInt();
 	switch (a) {
 	case 1:
-		int i,fact=1;
+		int i,fact=1;// dicleretion
 		System.out.println("enter the no for factorial :");
 		int num=sc.nextInt();
 		for(i=1;i<=num;i++) {
@@ -62,20 +62,27 @@ public static void main(String[] args) {
 
 	 case 5:
 		 System.out.println("enter the value of no :");
+		 int f=0;
 		int n1=sc.nextInt();
-		boolean k=false;
-		for (int t=2;t<=n1/2;t++){
-			if(n1%t==0) {
-				k=true;
-				break;
+		int n2=n1/2;
+		if(n1==0||n1==1) {
+			System.out.println(n1 + "is the prime no");
+		} 
+		else
+		{
+			for(int k=2;k<=n2;k++) {
+				if(n1%k==0) {
+					System.out.println(n1 + "is not prime no ");
+                      f=1;
+                      break;
+				}
 			}
-			if(!k)
-				System.out.println(n1+"is the prime no :");
-			else
-				System.out.println(n1+"is the not prime n0 :");
+			if(f==0) {
+				System.out.println(n1 + "is the prime no");
+			}
 		}
-		
 	default:
+		
 	}
 }
 }
